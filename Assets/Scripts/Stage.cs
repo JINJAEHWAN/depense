@@ -1,5 +1,7 @@
 using UnityEngine;
-
+using System.Collections;
+using UnityEngine.UI;
+using TMPro;
 public struct stageNeed
 {
     public float moneySpeed;
@@ -10,6 +12,8 @@ public struct stageNeed
 
 public class Stage : MonoBehaviour
 {
+    public TextMeshProUGUI tmp;
+    bool isPlayerLive = true;
     [SerializeField]protected stageNeed stageneed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,6 +21,8 @@ public class Stage : MonoBehaviour
         stageneed.moneyNow = 100.0f;
         stageneed.moneySpeed = 10.0f;
         stageneed.moneyAmount = 5000.0f;
+
+        StartCoroutine(moneyCount());
     }
 
     // Update is called once per frame
@@ -25,6 +31,22 @@ public class Stage : MonoBehaviour
         
     }
 
+    IEnumerator moneyCount()
+    {
+        while(stageneed.moneyNow <= stageneed.moneyAmount && isPlayerLive)
+        {
+            stageneed.moneyNow += Time.deltaTime * stageneed.moneySpeed;
+
+            if(stageneed.moneyNow >= stageneed.moneyAmount)
+            {
+                stageneed.moneyNow = stageneed.moneyAmount;
+            }
+            float moneya = Mathf.Floor(stageneed.moneyNow * 10f) / 10f;
+            tmp.text = moneya.ToString();
+
+            yield return null;
+        }
+    }
 
 
 }
