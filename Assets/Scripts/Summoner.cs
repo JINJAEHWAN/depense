@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Summoner : MonoBehaviour
 {
-    [SerializeField] private Button[] btn = new Button[8];
+    [SerializeField] private Button[] btn = new Button[16];
     private float delta_cpu, delta_player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,9 +17,9 @@ public class Summoner : MonoBehaviour
             {
                 if (delta_player < 0)
                 {
-                    GameObject go = Instantiate(Resources.Load<GameObject>($"Unit {index + 4}"), new Vector2(-10, 0), Quaternion.identity);
+                    GameObject go = Instantiate(Resources.Load<GameObject>($"Unit {index}"), new Vector2(-10, 0), Quaternion.identity);
                     go.layer = 6;
-                    delta_player = 2f;
+                    delta_player = 1f;
                 }
             });
         }
@@ -34,10 +34,11 @@ public class Summoner : MonoBehaviour
         delta_cpu -= Time.deltaTime;
         if(delta_cpu < 0)
         {
-            Unit un = Instantiate(Resources.Load<Unit>($"Unit {Random.Range(4,12)}"), new Vector2(10, 0), Quaternion.identity);
+            Unit un = Instantiate(Resources.Load<Unit>($"Unit {Random.Range(0,1)}"), new Vector2(10, 0), Quaternion.identity);
             un.data.moveSpeed *= -1;
             un.transform.localScale = new Vector3(-un.transform.localScale.x, un.transform.localScale.y, 1);
             un.gameObject.layer = 7;
+            un.isEnemy = true;
             delta_cpu = 5;
         }
         

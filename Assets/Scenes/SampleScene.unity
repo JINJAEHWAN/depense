@@ -119,6 +119,57 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &174153119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9076422344792471257, guid: 77797ac6ddcf14540b33afb5d8359e05, type: 3}
+  m_PrefabInstance: {fileID: 1423772273}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &174153122
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174153119}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 1}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1 &331579080
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +456,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402181400}
   m_CullTransparentMesh: 1
+--- !u!1 &407270835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4818802838953839269, guid: e0d0335c757baed4dae194a841597c46, type: 3}
+  m_PrefabInstance: {fileID: 699017547}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &407270838
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407270835}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 1}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,10 +1190,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base Blue
       objectReference: {fileID: 0}
+    - target: {fileID: 4818802838953839269, guid: e0d0335c757baed4dae194a841597c46, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4818802838953839269, guid: e0d0335c757baed4dae194a841597c46, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 407270838}
   m_SourcePrefab: {fileID: 100100000, guid: e0d0335c757baed4dae194a841597c46, type: 3}
 --- !u!1 &775668855
 GameObject:
@@ -2104,10 +2213,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base Red
       objectReference: {fileID: 0}
+    - target: {fileID: 9076422344792471257, guid: 77797ac6ddcf14540b33afb5d8359e05, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9076422344792471257, guid: 77797ac6ddcf14540b33afb5d8359e05, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 174153122}
   m_SourcePrefab: {fileID: 100100000, guid: 77797ac6ddcf14540b33afb5d8359e05, type: 3}
 --- !u!1 &1437768573
 GameObject:
