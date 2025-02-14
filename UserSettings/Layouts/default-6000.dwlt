@@ -19,8 +19,13 @@ MonoBehaviour:
     width: 1904
     height: 988
   m_ShowMode: 4
+<<<<<<< Updated upstream
   m_Title: Hierarchy
   m_RootView: {fileID: 6}
+=======
+  m_Title: Scene
+  m_RootView: {fileID: 2}
+>>>>>>> Stashed changes
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 0
@@ -225,7 +230,11 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 192
+=======
+  controlID: 17
+>>>>>>> Stashed changes
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -251,7 +260,11 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
+<<<<<<< Updated upstream
   controlID: 253
+=======
+  controlID: 18
+>>>>>>> Stashed changes
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -270,16 +283,33 @@ MonoBehaviour:
     serializedVersion: 2
     x: 347
     y: 0
+<<<<<<< Updated upstream
     width: 556
     height: 673
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 15}
+=======
+    width: 1450
+    height: 662
+  m_MinSize: {x: 201, y: 226}
+  m_MaxSize: {x: 4001, y: 4026}
+  m_ActualView: {fileID: 14}
+>>>>>>> Stashed changes
   m_Panes:
   - {fileID: 15}
+<<<<<<< Updated upstream
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &12
+=======
+  - {fileID: 16}
+  - {fileID: 17}
+  - {fileID: 18}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &8
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -322,11 +352,19 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< Updated upstream
     width: 661
     height: 259
   m_MinSize: {x: 101, y: 126}
   m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 20}
+=======
+    width: 742
+    height: 260
+  m_MinSize: {x: 101, y: 126}
+  m_MaxSize: {x: 4001, y: 4026}
+  m_ActualView: {fileID: 19}
+>>>>>>> Stashed changes
   m_Panes:
   - {fileID: 20}
   - {fileID: 19}
@@ -353,6 +391,61 @@ MonoBehaviour:
     height: 259
   m_MinSize: {x: 232, y: 276}
   m_MaxSize: {x: 10002, y: 10026}
+<<<<<<< Updated upstream
+=======
+  m_ActualView: {fileID: 20}
+  m_Panes:
+  - {fileID: 20}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &11
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 12}
+  - {fileID: 13}
+  m_Position:
+    serializedVersion: 2
+    x: 1450
+    y: 0
+    width: 454
+    height: 922
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 8096, y: 16192}
+  vertical: 1
+  controlID: 148
+  draggingID: 0
+--- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: SceneHierarchyWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 454
+    height: 383
+  m_MinSize: {x: 201, y: 226}
+  m_MaxSize: {x: 4001, y: 4026}
+>>>>>>> Stashed changes
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -930,7 +1023,11 @@ MonoBehaviour:
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
   m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
+<<<<<<< Updated upstream
   m_SceneIsLit: 0
+=======
+  m_SceneIsLit: 1
+>>>>>>> Stashed changes
   m_SceneLighting: 1
   m_2DMode: 1
   m_isRotationLocked: 0
@@ -938,9 +1035,15 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
+<<<<<<< Updated upstream
     m_Target: {x: 0.13062306, y: 3.779021, z: -0.13768433}
     speed: 2
     m_Value: {x: 0.13062306, y: 3.779021, z: -0.13768433}
+=======
+    m_Target: {x: -1254.6057, y: -565.41364, z: -7.008994}
+    speed: 2
+    m_Value: {x: -1254.6057, y: -565.41364, z: -7.008994}
+>>>>>>> Stashed changes
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -951,7 +1054,7 @@ MonoBehaviour:
   m_SceneViewState:
     m_AlwaysRefresh: 0
     showFog: 1
-    showSkybox: 0
+    showSkybox: 1
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -990,9 +1093,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< Updated upstream
     m_Target: 14.833751
     speed: 2
     m_Value: 14.833751
+=======
+    m_Target: 162.56482
+    speed: 2
+    m_Value: 162.56482
+>>>>>>> Stashed changes
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1198,8 +1307,13 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
+<<<<<<< Updated upstream
   m_LastSelectedObjectID: -41248
 --- !u!114 &19
+=======
+  m_LastSelectedObjectID: 37036
+--- !u!114 &18
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1370,10 +1484,17 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< Updated upstream
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: f0be0000
     m_LastClickedID: 48880
     m_ExpandedIDs: 0000000030aa0000b8b90000
+=======
+    scrollPos: {x: 0, y: 142}
+    m_SelectedIDs: 9c920000
+    m_LastClickedID: 37532
+    m_ExpandedIDs: 000000001e9200002092000022920000249200002692000000ca9a3b
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1402,7 +1523,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< Updated upstream
     m_ExpandedIDs: 
+=======
+    m_ExpandedIDs: 000000001e92000020920000229200002492000026920000
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1499,9 +1624,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< Updated upstream
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: e05effff5c5fffff0a60ffff1461ffffd861ffffca62ffff6a63ffffc266ffffac67ffffba68ffff0c6affff4c6affff326dffffc870ffff5ec80000
+=======
+      m_SelectedIDs: a29c0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 58b2ffff6eb2ffff84b2ffff9ab2ffffb0b2ffffc6b2ffffdab2ffffeeb2ffffe8c0fffffcc0ffff10c1ffff24c1ffff38c1ffff4cc1ffff60c1ffff72c1ffffeec2ffff90eaffffdeeafffff0faffff80900000ea900000
+>>>>>>> Stashed changes
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

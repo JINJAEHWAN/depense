@@ -8,7 +8,7 @@ public class test : Status
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         anim.SetBool("Move", true);
     }
 
