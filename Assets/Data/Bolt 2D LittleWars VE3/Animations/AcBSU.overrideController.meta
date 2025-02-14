@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 82f3c885db67e134eb5f5846ea8588b6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 22100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 189896
+  packageName: Bolt 2D LittleWars Assets Pack
+  packageVersion: 1.0
+  assetPath: Assets/Bolt 2D LittleWars VE3/Animations/AcBSU.overrideController
+  uploadId: 419925

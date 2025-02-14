@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 78a8c0b2f589a184ba256d87731e946b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 189896
+  packageName: Bolt 2D LittleWars Assets Pack
+  packageVersion: 1.0
+  assetPath: Assets/Bolt 2D LittleWars VE3/ReadMe/Scripts/Editor/ReadmeEditorVE3.cs
+  uploadId: 419925
