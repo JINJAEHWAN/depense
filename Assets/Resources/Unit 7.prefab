@@ -129,6 +129,9 @@ MonoBehaviour:
     moveSpeed: 1
   isEnemy: 0
   type: 0
+  anim: {fileID: 0}
+  shootArrow: {fileID: 0}
+  hptext: {fileID: 0}
 --- !u!1 &1265491521092382679
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +198,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.4}
+  m_Offset: {x: 0.2, y: 0.4}
   m_Radius: 0.4
 --- !u!1 &1611344821044320053
 GameObject:

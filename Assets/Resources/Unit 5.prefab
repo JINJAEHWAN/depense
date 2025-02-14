@@ -317,3 +317,6 @@ MonoBehaviour:
     moveSpeed: 1
   isEnemy: 0
   type: 1
+  anim: {fileID: 0}
+  shootArrow: {fileID: -6617390458066778740, guid: 06da86ebef5e16b4687cba321e19177b, type: 3}
+  hptext: {fileID: 0}

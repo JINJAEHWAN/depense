@@ -1,5 +1,3 @@
-
-
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,12 +32,12 @@ public class Summoner : MonoBehaviour
         delta_cpu -= Time.deltaTime;
         if(delta_cpu < 0)
         {
-            Unit un = Instantiate(Resources.Load<Unit>($"Unit {Random.Range(0,1)}"), new Vector2(10, 0), Quaternion.identity);
+            Unit un = Instantiate(Resources.Load<Unit>($"Unit {Random.Range(0,2)}"), new Vector2(10, 0), Quaternion.identity);
             un.data.moveSpeed *= -1;
             un.transform.localScale = new Vector3(-un.transform.localScale.x, un.transform.localScale.y, 1);
             un.gameObject.layer = 7;
             un.isEnemy = true;
-            delta_cpu = 5;
+            delta_cpu = 4f;
         }
         
     }
