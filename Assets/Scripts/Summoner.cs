@@ -5,9 +5,17 @@ public class Summoner : MonoBehaviour
 {
     [SerializeField] private Button[] btn = new Button[16];
     private float delta_cpu, delta_player;
+
+
+    //현재 돈이 얼마나 있는지 읽어 올 수가 없다..... 확인 부탁한다.....
+    [SerializeField] private StageMoney moneyData;
+
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        moneyData = FindFirstObjectByType<StageMoney>();
         for(int i=0; i<btn.Length; i++)
         {
             int index = i;
@@ -23,6 +31,8 @@ public class Summoner : MonoBehaviour
         }
         delta_cpu = 5f;
         delta_player = 0;
+
+        
     }  
 
     // Update is called once per frame

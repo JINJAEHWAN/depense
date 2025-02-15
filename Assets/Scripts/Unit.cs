@@ -9,7 +9,7 @@ public class Unit : MonoBehaviour
 {
     public battleData data;
     public bool isEnemy;
-    //근접유닛은 0으로 설정.
+    //근접유닛은 0, 원거리는 1, 마법사는 2로 일단 설정.
     public int type; 
     public Animator anim;
     private bool Moving;
@@ -41,7 +41,7 @@ public class Unit : MonoBehaviour
     {
         if (collision.gameObject.layer == gameObject.layer)
         {
-            if (data.hp >0)
+            if (data.hp >0 )
             {
                 movesCoroutine = MoveCo();
                 StartCoroutine(movesCoroutine);
@@ -64,7 +64,7 @@ public class Unit : MonoBehaviour
         {
             if (target == null)
             {
-                Debug.Log("in");
+
                 target = collision.GetComponent<Unit>();
             }
             if (movesCoroutine != null)
@@ -109,7 +109,6 @@ public class Unit : MonoBehaviour
         {
             if(target == collision.GetComponent<Unit>())
             {
-                Debug.LogWarning(1);
                 target = null;
             }
             if (data.hp > 0)
@@ -123,10 +122,10 @@ public class Unit : MonoBehaviour
 
     IEnumerator HitByMeleeAttack()
     {
-        //근접 공격, 공격 모션 뜨고 0.2초 뒤 피격 모션 뜨는 것으로 일단 설정.
+        //근접 공격, 공격 모션 뜨고 0.25초 뒤 피격 모션 뜨는 것으로 일단 설정.
         if (target != null)
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.25f);
             target.anim.SetTrigger("doHit");
             target.data.hp -= data.attackPower;
             if (target.data.hp < 1)

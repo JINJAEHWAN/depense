@@ -128,7 +128,10 @@ MonoBehaviour:
     cost: 10
     moveSpeed: 1
   isEnemy: 0
-  type: 1
+  type: 2
+  anim: {fileID: 0}
+  shootArrow: {fileID: 0}
+  hptext: {fileID: 0}
 --- !u!1 &3578021321654203264
 GameObject:
   m_ObjectHideFlags: 0

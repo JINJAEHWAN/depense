@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+    //카메라 움직이는 범위 인스펙터에 입력.
+    [SerializeField] private float Min_X, Max_X;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,7 +21,7 @@ public class CameraMovement : MonoBehaviour
         {
             Camera.main.transform.Translate(Vector3.right * Time.deltaTime * 4f);
         }
-        Camera.main.transform.position = new Vector3(Mathf.Clamp(Camera.main.transform.position.x, -7.8f, 7.8f), Camera.main.transform.position.y,
+        Camera.main.transform.position = new Vector3(Mathf.Clamp(Camera.main.transform.position.x, Min_X , Max_X), Camera.main.transform.position.y,
             Camera.main.transform.position.z);
     }
 }

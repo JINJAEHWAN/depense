@@ -382,7 +382,7 @@ MonoBehaviour:
     attackPower: 4
     hp: 11
     attackSpeed: 0.5
-    cost: 10
+    cost: 20
     moveSpeed: 1
   isEnemy: 0
   type: 1

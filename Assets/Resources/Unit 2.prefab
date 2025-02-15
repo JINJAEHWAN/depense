@@ -235,10 +235,13 @@ MonoBehaviour:
     attackPower: 1
     hp: 10
     attackSpeed: 0.5
-    cost: 10
+    cost: 30
     moveSpeed: 1
   isEnemy: 0
-  type: 1
+  type: 2
+  anim: {fileID: 0}
+  shootArrow: {fileID: 0}
+  hptext: {fileID: 0}
 --- !u!1 &4716034929067342641
 GameObject:
   m_ObjectHideFlags: 0
