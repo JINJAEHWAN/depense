@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
+[System.Serializable]
 public struct stageNeed
 {
     public float moneySpeed;
@@ -14,7 +15,7 @@ public class StageMoney : MonoBehaviour
 {
     public TextMeshProUGUI tmp;
     bool isPlayerLive = true;
-    [SerializeField]protected stageNeed stageneed;
+    public stageNeed stageneed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

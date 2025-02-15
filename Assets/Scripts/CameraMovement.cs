@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    //카메라 움직이는 범위 인스펙터에 입력.
-    [SerializeField] private float Min_X, Max_X;
+    [Header("카메라 움직이는 범위 인스펙터에 입력")]
+    [SerializeField] private float Min_X;
+    [SerializeField] private float Max_X;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

@@ -3,28 +3,38 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Arrow : MonoBehaviour
 {
-    //Direction은 -1 아니면 1로 설정.
-    public float Direction, Speed;
-    public int Damage;
 
+    [HideInInspector] public float Direction, Speed;
+    [HideInInspector] public int Damage;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if ((collision.gameObject.layer == 7 && gameObject.layer == 6) ||
             (collision.gameObject.layer == 6 && gameObject.layer == 7) || collision.gameObject.layer == 8)
         {
             Unit target = collision.GetComponent<Unit>();
             if (target != null)
             {
-                target.anim.SetTrigger("doHit");
+                if (target.anim != null)
+                {
+                    target.anim.SetTrigger("doHit");
+                }
                 target.data.hp -= Damage;
                 if (target.data.hp < 1)
                 {
                     target.data.hp = 0;
-                    target.anim.SetTrigger("doDie");
-                    Destroy(target.gameObject, 0.4f);
+                    if (target.anim != null)
+                    {
+                        target.anim.SetTrigger("doDie");
+                    }
+                    if (target.GetComponent<Collider2D>() != null)
+                        target.GetComponent<Collider2D>().enabled = false;
+                    if (target.GetComponent<Rigidbody2D>() != null) target.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+                    Destroy(target.gameObject, 0.5f);
                 }
-                target.hptext.text = target.data.hp.ToString();
+                if(target.hptext != null)
+                {
+                    target.hptext.text = target.data.hp.ToString();
+                }
                 Destroy(gameObject);
             }
         }
