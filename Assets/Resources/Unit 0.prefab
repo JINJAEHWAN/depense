@@ -302,13 +302,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     attackPower: 5
-    hp: 20
+    hp: 15
     attackSpeed: 0.75
-    cost: 10
+    cost: 15
     moveSpeed: 1
   isEnemy: 0
   type: 0
   anim: {fileID: 0}
+  targetList: []
   shootArrow: {fileID: 0}
   hptext: {fileID: 356598466275525753}
 --- !u!1 &5425727267749326883

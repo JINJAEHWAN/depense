@@ -9,8 +9,8 @@ public class Unit : MonoBehaviour
 {
     public battleData data;
     public bool isEnemy;
-    //근접유닛은 0, 원거리는 1, 마법사는 2로 일단 설정.
-    //성에도 일단 Unit 붙이고 type은 3으로 설정.
+
+    [Header("근접 유닛은 0, 궁수는 1, 마법사는 2, 성은 3으로 설정")]
     public int type;
     [HideInInspector] public Animator anim;
     private bool Moving;
@@ -161,11 +161,12 @@ public class Unit : MonoBehaviour
             }
             anim.SetTrigger("doAttack");
             deltaAtk = 1f;
+            //근접 공격 처리.
             if (type == 0)
             {
                 StartCoroutine(HitByMeleeAttack());
             }
-            //원거리 공격 처리.
+            //원거리 공격 처리. 화살이 나가게끔 처리.
             else if (type == 1)
             {
                 Arrow arrow = Instantiate(shootArrow, transform.position, Quaternion.identity);
@@ -174,6 +175,13 @@ public class Unit : MonoBehaviour
                 arrow.gameObject.layer = isEnemy ? 7 : 6;
                 arrow.Damage = data.attackPower;
                 target = null;
+            }
+            //마법사 공격 처리 어떻게 할지 모르겠음.
+            //일단 이렇게 처리할 경우 별도의 투사체가 나가지 않고 사거리 안에 있는 가장 가까운 적을 그냥 공격함.
+            //수정해도 됨.
+            if (type == 2)
+            {
+                StartCoroutine(HitByMeleeAttack());
             }
         }
     }

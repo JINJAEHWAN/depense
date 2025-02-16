@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Summoner : MonoBehaviour
 {
     [Header("유닛 소환 버튼 인스펙터에 연결")]
-    [SerializeField] private Button[] btn = new Button[16];
+    [SerializeField] private Button[] btn;
 
     [Header("소환할 유닛 Resources에서 찾아서 인스펙터에 연결")]
     [SerializeField] private Unit[] UnitData; 
@@ -34,6 +35,7 @@ public class Summoner : MonoBehaviour
                     moneyData.stageneed.moneyNow -= u.data.cost;
                 }
             });
+            btn[i].gameObject.GetComponentInChildren<TextMeshProUGUI>().text = UnitData[index].data.cost.ToString();
         }
         delta_cpu = 5f;
     }  
@@ -44,7 +46,7 @@ public class Summoner : MonoBehaviour
         delta_cpu -= Time.deltaTime;
         if(delta_cpu < 0)
         {
-            Unit un = Instantiate(Resources.Load<Unit>($"Unit {Random.Range(0,2)}"), CpuSummon, Quaternion.identity);
+            Unit un = Instantiate(Resources.Load<Unit>($"Unit {Random.Range(0,4)}"), CpuSummon, Quaternion.identity);
             un.data.moveSpeed *= -1;
             un.transform.localScale = new Vector3(-un.transform.localScale.x, un.transform.localScale.y, 1);
             un.gameObject.layer = 7;

@@ -124,13 +124,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     attackPower: 5
-    hp: 50
+    hp: 60
     attackSpeed: 0.5
-    cost: 40
+    cost: 30
     moveSpeed: 1
   isEnemy: 0
   type: 0
   anim: {fileID: 0}
+  targetList: []
   shootArrow: {fileID: 0}
   hptext: {fileID: 3603308785464509800}
 --- !u!1 &3841653632864788113
@@ -338,7 +339,7 @@ RectTransform:
   m_GameObject: {fileID: 7973520089954390681}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2386331247012808948}
@@ -442,8 +443,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2
-  m_fontSizeBase: 2
+  m_fontSize: 1.33
+  m_fontSizeBase: 1.33
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
