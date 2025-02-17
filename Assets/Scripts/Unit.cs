@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class Unit : MonoBehaviour
 {
+    [Header("HP는 Start 함수에서 MaxHP로 초기화됨.")]
     public battleData data;
     public bool isEnemy;
 
@@ -17,16 +18,15 @@ public class Unit : MonoBehaviour
     [HideInInspector] public Animator anim;
     private bool Moving;
     private float deltaAtk;
-    public List<Unit> targetList;
+    private List<Unit> targetList;
     private Unit target;
-    [Header("궁수 유닛만 발사할 화살 Resources에서 찾아서 인스펙터에 연결")]
+    [Header("궁수 유닛만 발사할 화살 인스펙터에 연결")]
     [SerializeField] private Arrow shootArrow;
 
     private Transform hpSliderPos;
     [Header("성 체력바만 Canvas 안에 만들고 연결.\n일반 유닛은 손 안 대도 됨")]
     [SerializeField] private Slider hpSlider;
-    //유닛 겹치게 할 건지 안 할 건지 확실히 결정.
-    //겹치게 하는 게 편하긴 함.
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.layer == gameObject.layer)
@@ -45,14 +45,7 @@ public class Unit : MonoBehaviour
             Moving = true;
         }
     }
-    
-    IEnumerator MoveCo()
-    {
-        yield return new WaitForSeconds(0.25f);
-        anim.SetTrigger("doMove");
-        Moving = true;
-    }
-
+  
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
@@ -92,22 +85,20 @@ public class Unit : MonoBehaviour
 
     IEnumerator HitByMeleeAttack()
     {
-        //근접 공격, 공격 모션 뜨고 0.25초 뒤 피격 모션 뜨는 것으로 일단 설정.
         if (target != null)
         {
-            yield return new WaitForSeconds(0.25f);
-            target.DoHit();
-            
+            yield return new WaitForSeconds(0.15f);
+            target.DoHit(data.attackPower);
         }
         target = null;
     }
-    public void DoHit()
+    public void DoHit(int dmg)
     {
         if (anim != null)
         {
             anim.SetTrigger("doHit");
         }
-        data.hp -= data.attackPower;
+        data.hp -= dmg;
         hpSlider.value = (float)data.hp / data.MaxHp;
         if (data.hp < 1)
         {
@@ -124,13 +115,17 @@ public class Unit : MonoBehaviour
         }
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-        Destroy(hpSlider.gameObject);
+        if (hpSlider != null)
+        {
+            Destroy(hpSlider.gameObject);
+        }
         Destroy(gameObject, 0.5f);
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        data.hp = data.MaxHp;
         anim = GetComponentInChildren<Animator>();
         if (anim!=null)
         {
@@ -160,8 +155,8 @@ public class Unit : MonoBehaviour
         deltaAtk -= Time.deltaTime * data.attackSpeed;
         if (deltaAtk < 0 && targetList.Count > 0)
         {
+            //가장 가까운 유닛을 공격 대상으로 결정.
             float nearestDistance = Mathf.Infinity;
-            
             for (int i = 0; i < targetList.Count; i++)
             {
                 float dist = Vector2.Distance(transform.position, targetList[i].transform.position);
@@ -181,7 +176,7 @@ public class Unit : MonoBehaviour
             //원거리 공격 처리. 화살이 나가게끔 처리.
             else if (type == 1)
             {
-                Arrow arrow = Instantiate(shootArrow, transform.position, Quaternion.identity);
+                Arrow arrow = Instantiate(shootArrow, transform.position + Vector3.up * 0.2f, Quaternion.identity);
                 arrow.Speed = 3f;
                 arrow.Direction = isEnemy ? -1 : 1;
                 arrow.gameObject.layer = isEnemy ? 7 : 6;
@@ -199,9 +194,6 @@ public class Unit : MonoBehaviour
         if (hpSlider != null)
         {
             hpSlider.transform.position = Camera.main.WorldToScreenPoint(hpSliderPos.position);
-
         }
-
-
     }
 }

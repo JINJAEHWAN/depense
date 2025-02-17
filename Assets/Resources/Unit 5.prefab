@@ -188,6 +188,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &7833637795582792240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 600963603346018473}
+  m_Layer: 0
+  m_Name: HpSliderPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &600963603346018473
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7833637795582792240}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.31, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9052363998901369079}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9179449506222662473
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +251,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 600963603346018473}
   - {fileID: 5577942935211624337}
   - {fileID: 7863342273121685835}
   m_Father: {fileID: 0}
@@ -310,13 +342,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    attackPower: 1
-    hp: 10
-    attackSpeed: 0.5
-    cost: 10
-    moveSpeed: 1
+    attackPower: 18
+    hp: 30
+    MaxHp: 55
+    attackSpeed: 0.6
+    cost: 60
+    moveSpeed: 1.1
   isEnemy: 0
   type: 1
   anim: {fileID: 0}
   shootArrow: {fileID: -6617390458066778740, guid: 06da86ebef5e16b4687cba321e19177b, type: 3}
-  hptext: {fileID: 0}
+  hpSlider: {fileID: 0}

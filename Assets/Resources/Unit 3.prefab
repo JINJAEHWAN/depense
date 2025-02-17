@@ -154,9 +154,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    attackPower: 5
+    attackPower: 4
     hp: 60
-    MaxHp: 60
+    MaxHp: 70
     attackSpeed: 0.5
     cost: 30
     moveSpeed: 1

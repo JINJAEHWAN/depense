@@ -18,8 +18,7 @@ public class Arrow : MonoBehaviour
             if (target != null)
             {
                 isHit = true;
-                target.DoHit();
-                
+                target.DoHit(Damage);  
                 Destroy(gameObject);
             }
         }

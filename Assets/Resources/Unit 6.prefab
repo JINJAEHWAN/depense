@@ -32,6 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3317961743168000825}
   - {fileID: 628013798318382822}
   - {fileID: 5337384403971072598}
   m_Father: {fileID: 0}
@@ -122,16 +123,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    attackPower: 1
+    attackPower: 21
     hp: 10
-    attackSpeed: 0.5
-    cost: 10
+    MaxHp: 50
+    attackSpeed: 0.6
+    cost: 65
     moveSpeed: 1
   isEnemy: 0
   type: 2
   anim: {fileID: 0}
   shootArrow: {fileID: 0}
-  hptext: {fileID: 0}
+  hpSlider: {fileID: 0}
+--- !u!1 &2093524073011019431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3317961743168000825}
+  m_Layer: 0
+  m_Name: HpSliderPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3317961743168000825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093524073011019431}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.31, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6521250251083426418}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3578021321654203264
 GameObject:
   m_ObjectHideFlags: 0

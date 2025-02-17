@@ -235,7 +235,7 @@ MonoBehaviour:
   data:
     attackPower: 5
     hp: 10
-    MaxHp: 10
+    MaxHp: 12
     attackSpeed: 0.5
     cost: 25
     moveSpeed: 1
