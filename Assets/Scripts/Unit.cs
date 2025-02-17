@@ -1,9 +1,11 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Unit : MonoBehaviour
 {
@@ -17,15 +19,14 @@ public class Unit : MonoBehaviour
     private float deltaAtk;
     public List<Unit> targetList;
     private Unit target;
-    [Header("발사할 화살 Resources에서 찾아서 인스펙터에 연결")]
+    [Header("궁수 유닛만 발사할 화살 Resources에서 찾아서 인스펙터에 연결")]
     [SerializeField] private Arrow shootArrow;
-    //Unit 0에만 현재 hp를 나타내는 Text가 달려 있음. 다른 데도 추가하던가 빼던가 추후 결정.
-    //다른 데도 추가할 시 인스펙터에 등록하면 됨.
 
+    private Transform hpSliderPos;
+    [Header("성 체력바만 Canvas 안에 만들고 연결.\n일반 유닛은 손 안 대도 됨")]
+    [SerializeField] private Slider hpSlider;
     //유닛 겹치게 할 건지 안 할 건지 확실히 결정.
     //겹치게 하는 게 편하긴 함.
-    [Header("Object 안에서 HP 텍스트 찾아서 인스펙터에 연결")]
-    public TextMeshPro hptext;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.layer == gameObject.layer)
@@ -95,28 +96,37 @@ public class Unit : MonoBehaviour
         if (target != null)
         {
             yield return new WaitForSeconds(0.25f);
-            if (target.anim != null)
-            {
-                target.anim.SetTrigger("doHit");
-            }
-            target.data.hp -= data.attackPower;
-            if (target.data.hp < 1)
-            {
-                target.data.hp = 0;
-                if (target.anim != null)
-                {
-                    target.anim.SetTrigger("doDie");
-                }
-                target.GetComponent<Collider2D>().enabled = false;
-                if (target.GetComponent<Rigidbody2D>() != null) target.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-                targetList.Remove(target);
-                Destroy(target.gameObject, 0.5f);
-            }
-            target.hptext.text = target.data.hp.ToString();
+            target.DoHit();
+            
         }
         target = null;
     }
+    public void DoHit()
+    {
+        if (anim != null)
+        {
+            anim.SetTrigger("doHit");
+        }
+        data.hp -= data.attackPower;
+        hpSlider.value = (float)data.hp / data.MaxHp;
+        if (data.hp < 1)
+        {
+            DoDie();
+        }
 
+    }
+    public void DoDie()
+    {
+        data.hp = 0;
+        if (anim != null)
+        {
+            anim.SetTrigger("doDie");
+        }
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+        Destroy(hpSlider.gameObject);
+        Destroy(gameObject, 0.5f);
+    }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -127,14 +137,16 @@ public class Unit : MonoBehaviour
             anim.SetTrigger("doMove");
         }
         if(type != 3) Moving = true;
-        hptext.text = data.hp.ToString();
-        if (isEnemy)
-        {
-            hptext.rectTransform.localScale = new Vector3(-1, 1, 1);
-        }
         target = null;
         targetList = new List<Unit>();
         deltaAtk = 0.01f;
+        hpSliderPos = transform.Find("HpSliderPos");
+        if(hpSlider == null)
+        {
+            hpSlider = Instantiate(Resources.Load<Slider>("UnitHPSlider"));
+        }
+        hpSlider.value = 1f;
+        hpSlider.transform.SetParent(FindFirstObjectByType<Canvas>().transform);
     }
 
     // Update is called once per frame
@@ -184,5 +196,12 @@ public class Unit : MonoBehaviour
                 StartCoroutine(HitByMeleeAttack());
             }
         }
+        if (hpSlider != null)
+        {
+            hpSlider.transform.position = Camera.main.WorldToScreenPoint(hpSliderPos.position);
+
+        }
+
+
     }
 }
