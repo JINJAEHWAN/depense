@@ -43,7 +43,7 @@ public class StageMoney : MonoBehaviour
                 stageneed.moneyNow = stageneed.moneyAmount;
             }
             float moneya = Mathf.Floor(stageneed.moneyNow * 10f) / 10f;
-            tmp.text = moneya.ToString();
+            tmp.text = moneya.ToString("F1");
 
             yield return null;
         }
